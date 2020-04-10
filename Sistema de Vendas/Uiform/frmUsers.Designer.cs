@@ -279,7 +279,7 @@
             // 
             this.cmbUserType.FormattingEnabled = true;
             this.cmbUserType.Items.AddRange(new object[] {
-            "Admiistrador",
+            "Administrador",
             "Usuario"});
             this.cmbUserType.Location = new System.Drawing.Point(149, 381);
             this.cmbUserType.Name = "cmbUserType";
