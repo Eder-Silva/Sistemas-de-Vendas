@@ -89,6 +89,8 @@ namespace Sistema_de_Vendas.Uiform
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
+           
+
             u.first_name = txtFirstName.Text;
             u.last_name = txtLastName.Text;
             u.email = txtEmail.Text;
@@ -99,7 +101,10 @@ namespace Sistema_de_Vendas.Uiform
             u.genero = cmbGenero.Text;
             u.user_type = cmbUserType.Text;
             u.added_date = DateTime.Now;
-            u.added_by = 1;
+
+            string loggedUser = frmLogin.loggedIn;
+            UserBLL usr = dal.GetIDFromUsername(loggedUser);
+            u.added_by = usr.id;
 
             bool success = dal.Insert(u);
             if(success == true)

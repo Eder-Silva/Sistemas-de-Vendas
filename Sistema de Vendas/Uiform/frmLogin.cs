@@ -13,6 +13,7 @@ namespace Sistema_de_Vendas.Uiform
         }
         loginBLL l = new loginBLL();
         loginDAL dal = new loginDAL();
+        public static string loggedIn;
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -35,7 +36,8 @@ namespace Sistema_de_Vendas.Uiform
             bool Success = dal.loginCheck(l);
             if(Success == true)
             {
-                MessageBox.Show("USUARIO CADASTRADO COM SUCESSO");
+                MessageBox.Show("ACESSO PERMITIDO");
+                loggedIn = l.username;
                 switch (l.user_type)
                 {
                     case "Administrador":
@@ -56,7 +58,7 @@ namespace Sistema_de_Vendas.Uiform
 
                     default:
                         {
-                            MessageBox.Show("TIPO DE USUÁRIO INVÁLIDO");
+                            MessageBox.Show("FAVOR CONFERIR USUÁRIO E SENHA");
                         }
                         break;
 
@@ -67,6 +69,11 @@ namespace Sistema_de_Vendas.Uiform
             {
                 MessageBox.Show("NÃO FOI POSSÍVEL CADASTRAR USUARIO");
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,5 +38,18 @@ namespace Sistema_de_Vendas
         {
             
         }
+
+        private void frmAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //quando for fechado a tela o painel administrativo, aparecerá a tela de login 
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Hide();
+        }
+
+        private void frmAdminDashboard_Load(object sender, EventArgs e)
+        {
+            lblLoggedInUser.Text = frmLogin.loggedIn;
+        }
     }
 }

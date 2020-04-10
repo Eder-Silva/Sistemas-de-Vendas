@@ -119,17 +119,16 @@
             this.lblLoggedInUser.AutoSize = true;
             this.lblLoggedInUser.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.Blue;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(70, 43);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(67, 69);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(173, 16);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(0, 16);
             this.lblLoggedInUser.TabIndex = 2;
-            this.lblLoggedInUser.Text = "eder.d.s.souza@gmail.com";
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(25, 43);
+            this.lblUser.Location = new System.Drawing.Point(-2, 69);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(63, 16);
             this.lblUser.TabIndex = 3;
@@ -171,6 +170,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Painel Administrativo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
             this.menuStripTop.ResumeLayout(false);

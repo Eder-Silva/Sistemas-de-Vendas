@@ -63,7 +63,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(25, 82);
+            this.lblUser.Location = new System.Drawing.Point(12, 82);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(63, 16);
             this.lblUser.TabIndex = 8;
@@ -76,9 +76,8 @@
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.Blue;
             this.lblLoggedInUser.Location = new System.Drawing.Point(70, 82);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(173, 16);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(0, 16);
             this.lblLoggedInUser.TabIndex = 7;
-            this.lblLoggedInUser.Text = "eder.d.s.souza@gmail.com";
             // 
             // menuStripTop
             // 
@@ -124,6 +123,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário de Usuários: ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.frmUserDashboard_Load);
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
             this.ResumeLayout(false);
