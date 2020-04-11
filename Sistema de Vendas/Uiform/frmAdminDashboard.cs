@@ -51,5 +51,11 @@ namespace Sistema_de_Vendas
         {
             lblLoggedInUser.Text = frmLogin.loggedIn;
         }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategoria categoria = new frmCategoria();
+            categoria.Show();
+        }
     }
 }

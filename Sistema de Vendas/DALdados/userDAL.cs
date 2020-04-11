@@ -51,7 +51,7 @@ namespace Sistema_de_Vendas.DALdados
         #endregion
 
         #region inserir  dados no bd
-        public bool Insert(UserBLL u)
+        public bool Insert(userBLL u)
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myConnstring);
@@ -97,7 +97,7 @@ namespace Sistema_de_Vendas.DALdados
         #endregion
 
         #region Atualizar os dados do bd
-        public bool Update(UserBLL u)
+        public bool Update(userBLL u)
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myConnstring);
@@ -156,7 +156,7 @@ namespace Sistema_de_Vendas.DALdados
         #endregion
 
         #region deletar os dados do bd
-        public bool Delete(UserBLL u)
+        public bool Delete(userBLL u)
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myConnstring);
@@ -239,9 +239,9 @@ namespace Sistema_de_Vendas.DALdados
         #endregion
 
         #region pegando o valor de ID de administrador ou usuario queestiver logado e enviar para o banco
-        public UserBLL GetIDFromUsername(string username)
+        public userBLL GetIDFromUsername(string username)
         {
-            UserBLL u = new UserBLL();
+            userBLL u = new userBLL();
             SqlConnection conn = new SqlConnection(myConnstring);
             DataTable dt = new DataTable();
             try

@@ -18,7 +18,7 @@ namespace Sistema_de_Vendas.Uiform
         {
             InitializeComponent();
         }
-        UserBLL u = new UserBLL();
+        userBLL u = new userBLL();
         userDAL dal = new userDAL();
         
 
@@ -103,7 +103,7 @@ namespace Sistema_de_Vendas.Uiform
             u.added_date = DateTime.Now;
 
             string loggedUser = frmLogin.loggedIn;
-            UserBLL usr = dal.GetIDFromUsername(loggedUser);
+            userBLL usr = dal.GetIDFromUsername(loggedUser);
             u.added_by = usr.id;
 
             bool success = dal.Insert(u);

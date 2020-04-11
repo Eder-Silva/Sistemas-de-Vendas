@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_de_Vendas.BLLClasses
 {
-    class UserBLL
+    class userBLL
     {
         public int id { get; set; }
         public string first_name { get; set; }
