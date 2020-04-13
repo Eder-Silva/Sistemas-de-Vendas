@@ -134,13 +134,37 @@ namespace Sistema_de_Vendas.Uiform
             {
                 MessageBox.Show("PRUDUTO DELETADO COM SUCESSO!");
                 Limpar();
+
+                //atualiza a gridView
+                DataTable dt = dal.Select();
+                dgvCategoria.DataSource = dt;
             }
             else
             {
                 MessageBox.Show("NÃO FOI POSSÍVEL DELETAR PRODUTO!");
             }
-            DataTable dt = dal.Select();
-            dgvCategoria.DataSource = dt;
+            
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+            // Obter as keywords(palavras-chave) do formulário
+            string keywords = txtPesquisa.Text;
+            if (keywords != null)
+            {
+
+                // Pesquise os produtos
+                DataTable dt = dal.Search(keywords);
+                dgvCategoria.DataSource = dt;
+            }
+            else
+            {
+
+                // Exibir todos os produtos
+                DataTable dt = dal.Search();
+                dgvCategoria.DataSource = dt;
+            }
         }
     }
     }

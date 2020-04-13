@@ -146,6 +146,7 @@ namespace Sistema_de_Vendas.DALdados
             try
             {
                 string sql = "DELETE FROM tbl_categories WHERE id=@id";
+                //passando valor usando cmd
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id", c.id);
 
@@ -176,6 +177,48 @@ namespace Sistema_de_Vendas.DALdados
         internal DataTable Search()
         {
             throw new NotImplementedException();
+        }
+        #endregion
+
+        #region Método de Pesquisa
+        public DataTable Search(string keywords)
+        {
+            //Conexão SQL para conexão com banco de dados
+            SqlConnection conn = new SqlConnection(myConnstring);
+
+            //DataTable - Representa uma tabela de dados na memória.
+            // Criando DataTable para manter o valor do dAtabase
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // consulta SQL para pesquisar usuarios
+                string sql = "SELECT * FROM tbl_categories WHERE id LIKE '%" + keywords + "%' OR titlie LIKE '%" + keywords + "%' OR description LIKE '%" + keywords + "%'     ";
+
+                // Comando SQL para executar Consulta
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //SqlDataAdapter - preencher o DataSet e atualizar o banco de dados do SQL Server.
+                // SQL Data Adapter para reter os dados do banco de dados temporariamente
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                // Abrir conexão com o banco de dados
+                conn.Open();
+
+                //FILL - Preenche um DataSet ou DataTable.
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox - Exibe uma janela de mensagem, também conhecida como uma caixa de diálogo que exibe uma mensagem ao usuário.
+                //Show() - Exibe uma caixa de mensagem.
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
         }
         #endregion
     }
