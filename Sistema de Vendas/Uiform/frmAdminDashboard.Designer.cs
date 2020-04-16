@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.usuérioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,9 +38,11 @@
             this.transaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblDataEHora = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlFooter.SuspendLayout();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +54,7 @@
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFooter.Location = new System.Drawing.Point(0, 400);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(800, 50);
+            this.pnlFooter.Size = new System.Drawing.Size(970, 50);
             this.pnlFooter.TabIndex = 0;
             this.pnlFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -86,6 +89,7 @@
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.produtosToolStripMenuItem.Text = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // faturaToolStripMenuItem
             // 
@@ -110,7 +114,7 @@
             this.transaçõesToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
-            this.menuStripTop.Size = new System.Drawing.Size(800, 24);
+            this.menuStripTop.Size = new System.Drawing.Size(970, 24);
             this.menuStripTop.TabIndex = 1;
             this.menuStripTop.Text = "menuStrip1";
             this.menuStripTop.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -120,20 +124,10 @@
             this.lblLoggedInUser.AutoSize = true;
             this.lblLoggedInUser.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.Blue;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(67, 69);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(870, 32);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
             this.lblLoggedInUser.Size = new System.Drawing.Size(0, 16);
             this.lblLoggedInUser.TabIndex = 2;
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(-2, 69);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(63, 16);
-            this.lblUser.TabIndex = 3;
-            this.lblUser.Text = "Usuário :";
             // 
             // label2
             // 
@@ -155,14 +149,41 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "em C#";
             // 
+            // lblDataEHora
+            // 
+            this.lblDataEHora.AutoSize = true;
+            this.lblDataEHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataEHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDataEHora.Location = new System.Drawing.Point(569, 31);
+            this.lblDataEHora.Name = "lblDataEHora";
+            this.lblDataEHora.Size = new System.Drawing.Size(0, 16);
+            this.lblDataEHora.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(740, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Seja Bem-Vindo ";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(970, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblDataEHora);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedInUser);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.menuStripTop);
@@ -193,9 +214,11 @@
         private System.Windows.Forms.ToolStripMenuItem transaçõesToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStripTop;
         private System.Windows.Forms.Label lblLoggedInUser;
-        private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDataEHora;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

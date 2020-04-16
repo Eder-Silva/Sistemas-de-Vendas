@@ -52,10 +52,18 @@
   <ItemGroup>
     <Compile Include="BLLClasses\categoriaBLL.cs" />
     <Compile Include="BLLClasses\loginBLL.cs" />
+    <Compile Include="BLLClasses\productsBLL.cs" />
     <Compile Include="BLLClasses\UserBLL.cs" />
     <Compile Include="DALdados\categoriaDAL.cs" />
     <Compile Include="DALdados\loginDAL.cs" />
+    <Compile Include="DALdados\productsDAL.cs" />
     <Compile Include="DALdados\userDAL.cs" />
+    <Compile Include="Uiform\frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uiform\frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uiform\frmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Uiform\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uiform\frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uiform\frmUserDashboard.resx">
       <DependentUpon>frmUserDashboard.cs</DependentUpon>

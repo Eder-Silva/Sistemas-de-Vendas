@@ -50,12 +50,37 @@ namespace Sistema_de_Vendas
         private void frmAdminDashboard_Load(object sender, EventArgs e)
         {
             lblLoggedInUser.Text = frmLogin.loggedIn;
+            //iniciando i timer
+            timer1.Start();
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCategoria categoria = new frmCategoria();
             categoria.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //inserindo o horario ao usuario logar
+            DateTime datetime = DateTime.Now;
+            this.lblDataEHora.Text = datetime.ToString();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducts product = new frmProducts();
+            product.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
